@@ -109,7 +109,7 @@ export default function App() {
           <p className="empty">Nothing here yet</p>
         ) : (
           filteredTasks.map((item) => (
-            <TodoItem
+            <Todoitem
               key={item.id}
               item={item}
               deleteTask={deleteTask}
