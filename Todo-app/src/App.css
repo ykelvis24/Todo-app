@@ -1,0 +1,144 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #dde3ec;
+  margin: 0;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 400px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00000010;
+  transition: 0.4s ease;
+}
+
+
+.container.dark {
+  background: #181818;
+  color: #ffffff;
+}
+
+.container.dark .todo {
+  background: #2f2f2f;
+  color: #ffffff;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.theme-btn {
+  width: 110px;
+  padding: 6px;
+  font-size: 13px;
+  margin: 0 auto 15px;
+  display: block;
+  border-radius: 6px;
+  background: #6c5ce7;
+  color: #fff;
+}
+
+.input-area {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="date"] {
+  flex: 1;
+  padding: 7px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.add-btn {
+  background: #00b894;
+  color: white;
+  border-radius: 6px;
+  padding: 7px 12px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.filters button.active {
+  background: #6c5ce7;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.todo {
+  background: #f0f3f8;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  animation: fade 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo.completed {
+  background: #a3d8a3;
+  text-decoration: line-through;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.due-date {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.actions button {
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.done {
+  background: #0984e3;
+  color: #fff;
+  border: none;
+}
+
+.edit {
+  background: #fdcb6e;
+  border: none;
+}
+
+.delete {
+  background: #d63031;
+  color: white;
+  border: none;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
