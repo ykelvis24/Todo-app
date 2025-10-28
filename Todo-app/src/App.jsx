@@ -14,7 +14,7 @@ export default function App() {
     const savedTheme = localStorage.getItem("darkMode");
 
     if (savedTasks) setTasks(JSON.parse(savedTasks));
-    if (savedTheme) setDarkMode(JSON.parse(savedTheme));
+    if (savedTheme !== null) setDarkMode(JSON.parse(savedTheme));
   }, []);
 
   useEffect(() => {
@@ -44,18 +44,12 @@ export default function App() {
 
   const toggleComplete = (id) => {
     setTasks(
-      tasks.map((t) =>
-        t.id === id ? { ...t, completed: !t.completed } : t
-      )
+      tasks.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t))
     );
   };
 
   const updateTask = (id, newText) => {
-    setTasks(
-      tasks.map((t) =>
-        t.id === id ? { ...t, text: newText } : t
-      )
-    );
+    setTasks(tasks.map((t) => (t.id === id ? { ...t, text: newText } : t)));
   };
 
   const filteredTasks = tasks.filter((t) => {
@@ -84,13 +78,30 @@ export default function App() {
           value={dueDate}
           onChange={(e) => setDueDate(e.target.value)}
         />
-        <button className="add-btn" onClick={addTask}>Add</button>
+        <button className="add-btn" onClick={addTask}>
+          Add
+        </button>
       </div>
 
       <div className="filters">
-        <button onClick={() => setFilter("all")} className={filter === "all" ? "active" : ""}>All</button>
-        <button onClick={() => setFilter("active")} className={filter === "active" ? "active" : ""}>Active</button>
-        <button onClick={() => setFilter("completed")} className={filter === "completed" ? "active" : ""}>Completed</button>
+        <button
+          onClick={() => setFilter("all")}
+          className={filter === "all" ? "active" : ""}
+        >
+          All
+        </button>
+        <button
+          onClick={() => setFilter("active")}
+          className={filter === "active" ? "active" : ""}
+        >
+          Active
+        </button>
+        <button
+          onClick={() => setFilter("completed")}
+          className={filter === "completed" ? "active" : ""}
+        >
+          Completed
+        </button>
       </div>
 
       <ul>

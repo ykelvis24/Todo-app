@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-export default function TodoItem({ item, deleteTask, toggleComplete, updateTask }) {
+export default function TodoItem({
+  item,
+  deleteTask,
+  toggleComplete,
+  updateTask,
+}) {
   const [editing, setEditing] = useState(false);
   const [newValue, setNewValue] = useState(item.text);
 
