@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function TodoItem({
+export default function Todoitem({
   item,
   deleteTask,
   toggleComplete,

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import TodoItem from "./TodoItem";
+import Todoitem from "./Todoitem";
 import "./App.css";
 
 export default function App() {
